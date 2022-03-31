@@ -8,14 +8,14 @@ using DataProvider;
 
 namespace WebApplication1
 {
-    public partial class SiteMaster : MasterPage
+    public partial class Detail : Page
     {
-        private IPersonRepository provider;
+        private IPersonRepository personRepository;
         protected void Page_Load(object sender, EventArgs e)
         {
-            provider = new PersonRepository();
+            personRepository = new PersonRepository();
         }
 
-public IEnumerable<Person> GetAllPersons() => provider.GetAll();
+        public IEnumerable<Person> GetAllPerson() => personRepository.GetAll();
     }
 }

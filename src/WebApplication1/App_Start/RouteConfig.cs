@@ -13,6 +13,11 @@ namespace WebApplication1
             var settings = new FriendlyUrlSettings();
             settings.AutoRedirectMode = RedirectMode.Permanent;
             routes.EnableFriendlyUrls(settings);
+            routes.MapPageRoute(
+              "ProductsByCategoryRoute",
+              "master",
+              "~/Site.Master"
+          );
         }
     }
 }
