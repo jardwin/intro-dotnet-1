@@ -10,3 +10,13 @@
    <li><a href="Home/Detail/@item.PersonId">@item.FirstName</a> </li>
 }
 </ul>
+
+<form asp-action="Create" method="post">
+    <label for="firstName">Firstname</label>
+    <input name="firstName" />
+    <label for="lastName">LastName</label>
+    <input name="lastName"/>
+    <label for="age">Age</label>
+    <input name="age"/>
+    <input type="submit" value="Creer"/>
+</form>

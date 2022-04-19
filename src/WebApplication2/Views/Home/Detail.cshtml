@@ -4,7 +4,15 @@
     ViewData["Title"] = "Detail page";
 }
 
-<p>Prenom = @Model.FirstName</p>
-<p>Nom = @Model.LastName </p>
-<p>Id = @Model.PersonId </p>
-<p>Age = @Model.Age</p>
+<form asp-action="Update" method="post">
+    <label asp-for="FirstName">Firstname</label>
+    <input asp-for="FirstName" value="@Model.FirstName" />
+    <label asp-for="LastName">LastName</label>
+    <input asp-for="LastName" value="@Model.LastName" />
+    <label asp-for="Age">Age</label>
+    <input asp-for="Age" value="@Model.Age" />
+    <input type="hidden" asp-for="PersonId" value="@Model.PersonId" />
+    <input type="submit" value="Mettre à jour"/>
+</form>
+
+<a href="/Home/Delete/@Model.PersonId">Supprimer</a>

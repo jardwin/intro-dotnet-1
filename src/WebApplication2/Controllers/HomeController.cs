@@ -32,6 +32,24 @@ namespace WebApplication2.Controllers
             return View(_dataProvider.Get(id));
         }
 
+        public IActionResult Update(Person person)
+        {
+            _dataProvider.Update(person.PersonId, person.FirstName, person.LastName, person.Age);
+            return RedirectToAction("Detail", new { id = person.PersonId });
+        }
+
+        public IActionResult Delete(Guid id)
+        {
+            _dataProvider.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Create(string firstName, string lastName, int age)
+        {
+            var newPerson = _dataProvider.Create(firstName, lastName, age);
+            return RedirectToAction("Detail", new { id = newPerson.PersonId });
+        }
+
         public IActionResult Privacy()
         {
             return View();
