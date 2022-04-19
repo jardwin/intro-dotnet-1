@@ -12,3 +12,10 @@
     <li><a href="detail/@item.PersonId">@item.FirstName</a></li>
 }
 </ul>
+
+<form asp-action="/index" method="post">
+    <input asp-for="person.FirstName" placeholder="first"/>
+    <input asp-for="person.LastName" placeholder="last"/>
+    <input asp-for="person.Age" placeholder="age"/>
+    <input type="submit" value="Creer"/>
+</form>

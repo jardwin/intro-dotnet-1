@@ -5,15 +5,18 @@
     ViewData["Title"] = "Detail";
 }
 
-<p>
-    Age = @Model.person.Age
-</p>
-<p>
-    Prenom = @Model.person.FirstName
-</p>
-<p>
-    Nom = @Model.person.LastName
-</p>
-<p>
-    Id = @Model.person.PersonId
-</p>
+<form asp-action="detail">
+    <label asp-for="person.Age">Age</label>
+    <input asp-for="person.Age" value="@Model.person.Age">
+
+    <label asp-for="person.FirstName"> Prenom </label>
+    <input asp-for="person.FirstName" value="@Model.person.FirstName">
+
+    <label asp-for="person.LastName">Nom</label>
+    <input asp-for="person.LastName" value="@Model.person.LastName">
+
+    <input type="hidden" asp-for="person.PersonId" value="@Model.person.PersonId">
+    <input type="submit" value="Mettre à jour"/>
+</form>
+
+<a href="/delete/@Model.person.PersonId">Supprimer</a>

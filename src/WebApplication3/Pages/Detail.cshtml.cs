@@ -22,5 +22,11 @@ namespace WebApplication3.Pages
         {
             person = _dataProvider.Get(id);
         }
+
+        public void OnPost(Person person)
+        {
+            _dataProvider.Update(person.PersonId, person.FirstName, person.LastName, person.Age);
+            this.person = _dataProvider.Get(person.PersonId);
+        }
     }
 }
